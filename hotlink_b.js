@@ -17,16 +17,18 @@ fetch("https://raw.githubusercontent.com/blindman67/SimplexNoiseJS/master/simple
 // Stub function
 function noise3D() { return 0 }
 
-const density = '%#10?!Ξxyz;:*+=-,._ '
+const density = 'Ñ@#W$9876543210?!smgxyz;:+=-,._ '
 
 export function main(coord, context, cursor, buffer) {
-	const t = context.time * 0.0007
+	const t = context.time * 0.0002
 	const s = 0.05
 	const x = coord.x * s
 	const y = coord.y * s / context.metrics.aspect + t
 	const i = Math.floor((noise3D(x, y, t) * 0.5 + 0.5) * density.length)
 	return density[i]
 }
+
+
 
 
 
